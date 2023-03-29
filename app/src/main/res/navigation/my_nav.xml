@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/recipeFragment">
+
+    <fragment
+        android:id="@+id/recipeFragment"
+        android:name="com.example.foodrecipipaging.fragment.overviewfragment.RecipeFragment"
+        android:label="RecipeFragment"
+        tools:layout="@layout/fragment_recipe"
+        >
+        <action
+            android:id="@+id/action_recipeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.foodrecipipaging.fragment.searchfragment.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search"
+        >
+        <argument
+            android:name="args"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_searchFragment_to_ingredianFragment"
+            app:destination="@id/ingredianFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ingredianFragment"
+        android:name="com.example.foodrecipipaging.fragment.ingredianfragment.IngredianFragment"
+        android:label="IngredianFragment"
+        tools:layout="@layout/fragment_ingredian"
+        >
+        <argument
+            android:name="argin"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>
